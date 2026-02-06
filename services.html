@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - NevaraTech</title>
+  <meta name="description" content="Comprehensive AI and software solutions designed to transform your business operations.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0a0f1c',
+            charcoal: '#1a1f2e',
+            slate: '#2a3142',
+            cyan: '#00d4ff',
+            teal: '#00b8a9',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-navy text-white font-sans">
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan to-teal flex items-center justify-center">
+            <span class="text-navy font-bold text-xl">N</span>
+          </div>
+          <span class="font-display font-bold text-xl">NevaraTech</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-6">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="services.html" class="nav-link active">Services</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="innovation-hub.html" class="nav-link">Innovation Hub</a>
+          <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="hidden lg:block">
+          <a href="contact.html" class="btn-primary">Book Consultation</a>
+        </div>
+        <button id="mobile-toggle" class="lg:hidden p-2 text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden hidden glass-card mx-4 mt-2 rounded-xl overflow-hidden">
+      <div class="flex flex-col p-4 gap-2">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="services.html" class="mobile-nav-link">Services</a>
+        <a href="products.html" class="mobile-nav-link">Products</a>
+        <a href="innovation-hub.html" class="mobile-nav-link">Innovation Hub</a>
+        <a href="index.html#testimonials" class="mobile-nav-link">Testimonials</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="contact.html" class="btn-primary text-center mt-2">Book Consultation</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="reveal inline-block px-4 py-2 rounded-full glass-card text-cyan text-sm font-medium mb-4">Our Expertise</span>
+      <h1 class="reveal font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+        Our <span class="text-gradient">Services</span>
+      </h1>
+      <p class="reveal text-gray-400 text-lg max-w-2xl mx-auto">
+        End-to-end AI solutions and software development services designed to accelerate your digital transformation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- AI Workflow Automation -->
+        <div class="reveal glass-card rounded-2xl p-8 hover-lift">
+          <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan to-teal flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <rect x="4" y="4" width="16" height="16" rx="2" stroke-width="2"/>
+              <rect x="9" y="9" width="6" height="6" stroke-width="2"/>
+              <path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-4">AI Workflow Automation</h3>
+          <p class="text-gray-400 mb-6">
+            Streamline business operations with intelligent automation that learns and adapts to your unique processes. Our AI-powered workflows reduce manual tasks by up to 80%.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Intelligent document processing
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Automated customer support
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Smart scheduling & routing
+            </li>
+          </ul>
+        </div>
+
+        <!-- Custom Software Development -->
+        <div class="reveal glass-card rounded-2xl p-8 hover-lift" style="animation-delay: 100ms">
+          <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan to-teal flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="8 6 2 12 8 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-4">Custom Software Development</h3>
+          <p class="text-gray-400 mb-6">
+            Full-stack solutions built with modern technologies like FastAPI, React, and Supabase. We deliver scalable, maintainable applications tailored to your business.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Web & mobile applications
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              API design & development
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Database architecture
+            </li>
+          </ul>
+        </div>
+
+        <!-- Data Analytics & Dashboards -->
+        <div class="reveal glass-card rounded-2xl p-8 hover-lift" style="animation-delay: 200ms">
+          <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan to-teal flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <line x1="12" y1="20" x2="12" y2="10" stroke-width="2" stroke-linecap="round"/>
+              <line x1="18" y1="20" x2="18" y2="4" stroke-width="2" stroke-linecap="round"/>
+              <line x1="6" y1="20" x2="6" y2="16" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-4">Data Analytics & Dashboards</h3>
+          <p class="text-gray-400 mb-6">
+            Transform raw data into actionable insights with interactive visualizations and real-time analytics dashboards that drive informed decision-making.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Real-time dashboards
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Predictive analytics
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Custom reporting tools
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cloud Integration -->
+        <div class="reveal glass-card rounded-2xl p-8 hover-lift" style="animation-delay: 300ms">
+          <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan to-teal flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-4">Web & Cloud Integration</h3>
+          <p class="text-gray-400 mb-6">
+            Seamlessly connect your systems via AWS, Azure, or Google Cloud. We design scalable cloud architectures that grow with your business needs.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Cloud migration
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Microservices architecture
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              DevOps & CI/CD
+            </li>
+          </ul>
+        </div>
+
+        <!-- Machine Learning -->
+        <div class="reveal glass-card rounded-2xl p-8 hover-lift" style="animation-delay: 400ms">
+          <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan to-teal flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3" stroke-width="2"/>
+              <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-4">Machine Learning Solutions</h3>
+          <p class="text-gray-400 mb-6">
+            Custom ML models trained on your data to solve specific business challenges. From NLP to computer vision, we build AI that delivers results.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Custom model training
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              NLP & text analysis
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Computer vision
+            </li>
+          </ul>
+        </div>
+
+        <!-- Consulting -->
+        <div class="reveal glass-card rounded-2xl p-8 hover-lift" style="animation-delay: 500ms">
+          <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan to-teal flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="9" cy="7" r="4" stroke-width="2"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-4">AI Strategy Consulting</h3>
+          <p class="text-gray-400 mb-6">
+            Expert guidance on AI adoption strategy, technology selection, and implementation roadmaps. We help you navigate the AI landscape with confidence.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              AI readiness assessment
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Technology roadmapping
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              Team training & workshops
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="reveal glass-card rounded-3xl p-8 md:p-12 border border-cyan/20">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+        <p class="text-gray-400 mb-8">
+          Let's discuss how our services can help transform your business operations.
+        </p>
+        <a href="contact.html" class="btn-primary text-lg px-8 py-4">
+          Schedule a Consultation
+          <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan to-teal flex items-center justify-center">
+            <span class="text-navy font-bold">N</span>
+          </div>
+          <span class="font-display font-bold">NevaraTech</span>
+        </a>
+        <p class="text-gray-400 text-sm">2025 NevaraTech. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - NevaraTech</title>
+  <meta name="description" content="Learn about NevaraTech's mission, values, and the team behind our AI-powered solutions.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0a0f1c',
+            charcoal: '#1a1f2e',
+            slate: '#2a3142',
+            cyan: '#00d4ff',
+            teal: '#00b8a9',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-navy text-white font-sans">
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan to-teal flex items-center justify-center">
+            <span class="text-navy font-bold text-xl">N</span>
+          </div>
+          <span class="font-display font-bold text-xl">NevaraTech</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-6">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="products.html" class="nav-link">Products</a>
+          <a href="innovation-hub.html" class="nav-link">Innovation Hub</a>
+          <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+          <a href="about.html" class="nav-link active">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="hidden lg:block">
+          <a href="contact.html" class="btn-primary">Book Consultation</a>
+        </div>
+        <button id="mobile-toggle" class="lg:hidden p-2 text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden hidden glass-card mx-4 mt-2 rounded-xl overflow-hidden">
+      <div class="flex flex-col p-4 gap-2">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="services.html" class="mobile-nav-link">Services</a>
+        <a href="products.html" class="mobile-nav-link">Products</a>
+        <a href="innovation-hub.html" class="mobile-nav-link">Innovation Hub</a>
+        <a href="index.html#testimonials" class="mobile-nav-link">Testimonials</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="contact.html" class="btn-primary text-center mt-2">Book Consultation</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="reveal inline-block px-4 py-2 rounded-full glass-card text-cyan text-sm font-medium mb-4">Our Story</span>
+      <h1 class="reveal font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+        About <span class="text-gradient">NevaraTech</span>
+      </h1>
+      <p class="reveal text-gray-400 text-lg max-w-2xl mx-auto">
+        We're on a mission to democratize AI and help businesses of all sizes harness the power of intelligent automation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6">Our <span class="text-gradient">Mission</span></h2>
+          <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+            NevaraTech is redefining how businesses operate through automation. We combine data, AI, and creative engineering to turn complexity into clarity.
+          </p>
+          <p class="text-gray-400 mb-6 leading-relaxed">
+            Our team of experts works tirelessly to deliver solutions that not only meet your current needs but anticipate future challenges, ensuring your business stays ahead of the curve.
+          </p>
+          <p class="text-gray-400 leading-relaxed">
+            Founded with the belief that AI should be accessible to everyone, we strive to create tools and services that empower businesses to achieve more with less.
+          </p>
+        </div>
+        
+        <div class="reveal glass-card rounded-2xl p-8" style="animation-delay: 100ms">
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan to-teal flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="6" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="2" stroke-width="2"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-1">Mission-Driven</h4>
+                <p class="text-gray-400 text-sm">Focused on delivering measurable results that matter to your business.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan to-teal flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-1">Innovation First</h4>
+                <p class="text-gray-400 text-sm">Leveraging cutting-edge AI technology to solve complex problems.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan to-teal flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-1">Trusted Partner</h4>
+                <p class="text-gray-400 text-sm">Committed to your long-term success with transparent practices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-charcoal/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="reveal text-center">
+          <div class="text-4xl sm:text-5xl font-bold text-gradient mb-2">150+</div>
+          <div class="text-gray-400">Projects Completed</div>
+        </div>
+        <div class="reveal text-center" style="animation-delay: 100ms">
+          <div class="text-4xl sm:text-5xl font-bold text-gradient mb-2">50+</div>
+          <div class="text-gray-400">Happy Clients</div>
+        </div>
+        <div class="reveal text-center" style="animation-delay: 200ms">
+          <div class="text-4xl sm:text-5xl font-bold text-gradient mb-2">15+</div>
+          <div class="text-gray-400">Team Members</div>
+        </div>
+        <div class="reveal text-center" style="animation-delay: 300ms">
+          <div class="text-4xl sm:text-5xl font-bold text-gradient mb-2">5+</div>
+          <div class="text-gray-400">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="reveal text-cyan font-medium">Our Team</span>
+        <h2 class="reveal font-display text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 mb-4">Meet the Experts</h2>
+        <p class="reveal text-gray-400 max-w-2xl mx-auto">
+          A diverse team of engineers, data scientists, and strategists passionate about AI innovation.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Team Member 1 -->
+        <div class="reveal glass-card rounded-2xl p-6 text-center hover-lift">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-br from-cyan to-teal mx-auto mb-4 flex items-center justify-center">
+            <span class="text-3xl font-bold text-navy">AJ</span>
+          </div>
+          <h3 class="font-display font-semibold text-lg">Alex Johnson</h3>
+          <p class="text-cyan text-sm mb-2">CEO & Founder</p>
+          <p class="text-gray-400 text-sm">Former ML Lead at Google. 10+ years in AI research.</p>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="reveal glass-card rounded-2xl p-6 text-center hover-lift" style="animation-delay: 100ms">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-br from-cyan to-teal mx-auto mb-4 flex items-center justify-center">
+            <span class="text-3xl font-bold text-navy">SC</span>
+          </div>
+          <h3 class="font-display font-semibold text-lg">Sarah Chen</h3>
+          <p class="text-cyan text-sm mb-2">CTO</p>
+          <p class="text-gray-400 text-sm">PhD in Computer Science. Expert in distributed systems.</p>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="reveal glass-card rounded-2xl p-6 text-center hover-lift" style="animation-delay: 200ms">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-br from-cyan to-teal mx-auto mb-4 flex items-center justify-center">
+            <span class="text-3xl font-bold text-navy">MR</span>
+          </div>
+          <h3 class="font-display font-semibold text-lg">Michael Roberts</h3>
+          <p class="text-cyan text-sm mb-2">Head of AI</p>
+          <p class="text-gray-400 text-sm">Former Amazon AI. Specializes in NLP and vision.</p>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="reveal glass-card rounded-2xl p-6 text-center hover-lift" style="animation-delay: 300ms">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-br from-cyan to-teal mx-auto mb-4 flex items-center justify-center">
+            <span class="text-3xl font-bold text-navy">EP</span>
+          </div>
+          <h3 class="font-display font-semibold text-lg">Emily Park</h3>
+          <p class="text-cyan text-sm mb-2">Lead Engineer</p>
+          <p class="text-gray-400 text-sm">Full-stack expert. Builds scalable cloud solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="reveal glass-card rounded-3xl p-8 md:p-12 border border-cyan/20">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Join Our Journey</h2>
+        <p class="text-gray-400 mb-8">
+          We're always looking for talented individuals to join our team. Check out our open positions or get in touch.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html" class="btn-primary">
+            Get In Touch
+            <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="#" class="btn-secondary">View Careers</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan to-teal flex items-center justify-center">
+            <span class="text-navy font-bold">N</span>
+          </div>
+          <span class="font-display font-bold">NevaraTech</span>
+        </a>
+        <p class="text-gray-400 text-sm">2025 NevaraTech. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
