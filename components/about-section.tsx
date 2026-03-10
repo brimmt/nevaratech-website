@@ -45,9 +45,8 @@ export function AboutSection() {
   return (
     <section id="about" className="py-20 sm:py-32 relative" ref={sectionRef}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
+        <div className="max-w-3xl mx-auto text-center">
+          
             <div className="scroll-fade-in">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">
                 Our <span className="gradient-text">Mission</span>
@@ -75,46 +74,9 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* Right Visual */}
-            <div className="scroll-fade-in relative">
-              <div className="glass p-8 rounded-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 animate-gradient" />
-                <div className="relative space-y-6">
-                  <div className="flex items-center gap-4 glass p-4 rounded-xl">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">🤖</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground">AI-Powered</div>
-                      <div className="text-sm text-muted-foreground">Intelligent automation</div>
-                    </div>
-                  </div>
 
-                  <div className="flex items-center gap-4 glass p-4 rounded-xl">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">⚡</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground">Fast Delivery</div>
-                      <div className="text-sm text-muted-foreground">Rapid implementation</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4 glass p-4 rounded-xl">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">🎯</span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground">Results-Focused</div>
-                      <div className="text-sm text-muted-foreground">Measurable outcomes</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
     </section>
   )
 }

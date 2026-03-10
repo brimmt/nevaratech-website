@@ -21,8 +21,8 @@ export function Navbar() {
     { href: "/", label: "Home" },
     { href: "#services", label: "Services" },
     { href: "#products", label: "Products" },
-    { href: "/innovation-hub", label: "Innovation Hub 🧠" },
-    { href: "#testimonials", label: "Testimonials" },
+    /* { href: "/innovation-hub", label: "Innovation Hub 🧠" },
+    { href: "#testimonials", label: "Testimonials" }, */
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" },
   ]
@@ -81,7 +81,7 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button className="mt-2 gradient-glow text-primary-foreground w-full">Join Waitlist</Button>
+              <Button className="mt-2 gradient-glow text-primary-foreground w-full">Start Your Project</Button>
             </div>
           </div>
         )}
